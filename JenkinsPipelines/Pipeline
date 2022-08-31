@@ -4,7 +4,7 @@ pipeline {
         stage('git') {
             steps {
                 sh 'rm -r *'
-                git branch: "dev", credentialsId: 'GitHub_SSH_key', url: 'git@github.com:Salvadory/MyLearningProject.git'
+                git branch: "master", credentialsId: 'GitHub_SSH_key', url: 'git@github.com:Salvadory/MyLearningProject.git'
                 sh 'pwd'
                 sh 'ls -la'
             }
