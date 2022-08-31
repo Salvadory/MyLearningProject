@@ -1,10 +1,13 @@
 pipeline { 
     agent any
+    environment {
+        branch_name = "master"
+    }
     stages {
         stage('git') {
             steps {
                 sh 'rm -r *'
-                git branch: "master", credentialsId: 'GitHub_SSH_key', url: 'git@github.com:Salvadory/MyLearningProject.git'
+                git branch: "${branch_name}", credentialsId: 'GitHub_SSH_key', url: 'git@github.com:Salvadory/MyLearningProject.git'
                 sh 'pwd'
                 sh 'ls -la'
             }
