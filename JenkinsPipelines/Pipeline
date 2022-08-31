@@ -1,7 +1,7 @@
 pipeline { 
     agent any
     environment {
-        branch_name = "master"
+        branch_name = "dev"
     }
     stages {
         stage('git') {
